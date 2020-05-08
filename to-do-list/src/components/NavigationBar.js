@@ -25,7 +25,7 @@ class NavigationBar extends Component {
                                 <MDBNavLink to="TodoMain">Home</MDBNavLink>
                             </MDBNavItem>
                             <MDBNavItem>
-                                <MDBNavLink to="TodoInfoList">To-do List</MDBNavLink>
+                                <MDBNavLink to="TodoInfoList">List of To-Do</MDBNavLink>
                             </MDBNavItem>
                         </MDBNavbarNav>
                     </MDBCollapse>
