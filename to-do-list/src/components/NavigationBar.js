@@ -1,37 +1,38 @@
-import React from 'react';
-import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
-import styled from 'styled-components';
-const Styles = styled.div`
-  .navbar { background-color: #222; }
-  a, .navbar-nav, .navbar-light .nav-link {
-    color: #9FFFCB;
-    &:hover { color: white; }
-  }
-  .navbar-brand {
-    font-size: 1.4em;
-    color: #9FFFCB;
-    &:hover { color: white; }
-  }
-  .form-center {
-    position: absolute !important;
-    left: 25%;
-    right: 25%;
-  }
-`;
-export const NavigationBar = () => (
-    <Styles>
-        <Navbar expand="lg">
-            <Navbar.Brand href="/">Login</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Form className="form-center">
-                <FormControl type="text" placeholder="Search Chat" className="" />
-            </Form>
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto">
-                    <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/about">Chat</Nav.Link></Nav.Item>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    </Styles>
-)
+import React, { Component } from "react";
+import {
+    MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+    MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+} from "mdbreact";
+import { BrowserRouter as Router } from 'react-router-dom';
+
+class NavigationBar extends Component {
+    state = {
+        isOpen: false
+    };
+
+    toggleCollapse = () => {
+        this.setState({ isOpen: !this.state.isOpen });
+    }
+
+    render() {
+        return (
+            <Router>
+                <MDBNavbar color="indigo" dark expand="md">
+                    <MDBNavbarToggler onClick={this.toggleCollapse} />
+                    <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+                        <MDBNavbarNav left>
+                            <MDBNavItem active>
+                                <MDBNavLink to="TodoMain">Home</MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="TodoInfoList">To-do List</MDBNavLink>
+                            </MDBNavItem>
+                        </MDBNavbarNav>
+                    </MDBCollapse>
+                </MDBNavbar>
+            </Router>
+        );
+    }
+}
+
+export default NavigationBar;
