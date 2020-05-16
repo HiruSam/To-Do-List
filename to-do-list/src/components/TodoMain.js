@@ -92,10 +92,10 @@ class TodoMain extends Component {
                     <div className=" border border-white col-8 mx-auto col-8 mx-3 mt-5 p-3">
                         <div className= "mt-5">
                             <h4 className="text-center text-white">
-                                Welcome To-Do App !!!
+                                Welcome to To-Do App !!!
                             </h4>
                             <h5 className="text-center text-warning">
-                                Make your Life Easier....
+                                Make your Life Easier...
                             </h5>
                         </div>
                         <TodoInfoList
