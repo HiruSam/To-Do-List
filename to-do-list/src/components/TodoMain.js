@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Card, CardBody, CardTitle} from "reactstrap";
 import TodoInfoList from "./TodoInfoList";
 
 class TodoMain extends Component {
@@ -87,30 +88,43 @@ class TodoMain extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className=" border border-white col-8 mx-auto col-8 mx-3 mt-5 p-3">
-                        <div className= "mt-5">
-                            <h4 className="text-center text-white">
-                                Welcome to To-Do App !!!
-                            </h4>
+            // <div className="container">
+            //     <div className="row">
+            //         <div className=" border border-white col-8 mx-auto col-8 mx-3 mt-5 p-3">
+            //             <div className= "mt-5">
+            //                 <h4 className="text-center text-white">
+            //                     Welcome to To-Do App !!!
+            //                 </h4>
+
+            //             </div>
+
+            //         </div>
+            //     </div>
+            // </div>
+            <React.Fragment>
+                <div className="my-lg-5">
+                    <Card className="bg-light mb-3 text-center w-50 mx-auto">
+                        <CardBody >
+                            <CardTitle> <h2><strong>Welcome to To-Do App !!!</strong></h2></CardTitle>
+                        <br/>
                             <h5 className="text-center text-warning">
                                 Make your Life Easier...
                             </h5>
-                        </div>
-                        <TodoInfoList
-                            Tasks={this.state.Tasks}
-                            Task_Todo={this.state.Task_Todo}
-                            Edit_Task={this.state.Edit_Task}
-                            TaskChangeHandler={this.TaskChangeHandler}
-                            AddTaskToDo={this.AddTaskToDo}
-                            EditTask={this.EditTask}
-                            DeleteTask={this.DeleteTask}
-                            CompleteTodo={this.CompleteTodo}
-                        />
-                    </div>
+                            <br/>
+                            <TodoInfoList
+                                Tasks={this.state.Tasks}
+                                Task_Todo={this.state.Task_Todo}
+                                Edit_Task={this.state.Edit_Task}
+                                TaskChangeHandler={this.TaskChangeHandler}
+                                AddTaskToDo={this.AddTaskToDo}
+                                EditTask={this.EditTask}
+                                DeleteTask={this.DeleteTask}
+                                CompleteTodo={this.CompleteTodo}
+                            />
+                        </CardBody>
+                    </Card>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
