@@ -103,7 +103,7 @@ class TodoMain extends Component {
             // </div>
             <React.Fragment>
                 <div className="my-lg-5">
-                    <Card className="bg-light mb-3 text-center w-50 mx-auto">
+                    <Card className="bg-light mb-3 text-center text-info w-50 mx-auto">
                         <CardBody >
                             <CardTitle> <h2><strong>Welcome to To-Do App !!!</strong></h2></CardTitle>
                         <br/>
