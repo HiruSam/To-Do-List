@@ -27,7 +27,7 @@ class TodoInfo extends Component {
                     }
 
                     {/*Completed*/}
-                    {Completed ? 'Your Complete Your Task !!!' :
+                    {Completed ? 'Your task is completed.!!!' :
                         <span className="text-info mx-3"
                               onClick={CompleteTodo}
                         >
